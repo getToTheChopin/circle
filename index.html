@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hand Circle Challenge</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <canvas id="threeCanvas"></canvas>
+    <div class="overlay">
+      <header class="hud">
+        <div class="brand">Hand Circle Challenge</div>
+        <div class="hud-right">
+          <div class="hint" id="statusHint">Pinch above to grab the crayon</div>
+          <div class="badge" id="pinchBadge">Ready</div>
+        </div>
+      </header>
+      <div class="playfield">
+        <div class="crayon" id="crayon">🖍</div>
+        <canvas id="drawCanvas"></canvas>
+      </div>
+      <video id="inputVideo" playsinline></video>
+      <div class="final-screen hidden" id="finalScreen">
+        <div class="final-card" id="scorecard">
+          <h1>Circle Score</h1>
+          <div class="score-display"><span id="scoreValue">0</span>%</div>
+          <p class="score-message" id="scoreMessage"></p>
+          <div class="final-actions">
+            <button id="screenshotButton">Save PNG</button>
+            <button id="shareButton">Share on Twitter</button>
+            <button id="restartButton">Restart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.156.1/build/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+    <script src="./main.js" defer></script>
+  </body>
+</html>
